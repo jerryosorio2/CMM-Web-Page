@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="appCtrl">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>.:: Centro médico moyuta ::.</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+	<link rel="stylesheet" href="css/scrolling-nav.css">
+	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" >
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.7/font-awesome-animation.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.7/font-awesome-animation.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.0.0/css/responsive.bootstrap.min.css">
+	
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+	<!-- Nagevacion -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<a class="navbar-brand page-scroll" href="#page-top"><i class="fa fa-medkit"></i></a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>	
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top">Centro médico moyuta</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li class="hidden"><a class="page-scroll" href="#page-top"></a></li>
+					<li><a class="page-scroll " href="#page-top"><i class="fa fa-hospital-o faa-bounce animated-hover fa-2x"></i> Inicio</a></li>
+					<li><a class="page-scroll " href="#about"><i class="fa fa-user-md faa-bounce animated-hover fa-2x"></i> ¿Quienes somos?</a></li>
+					<li><a class="page-scroll " href="#services"><i class="fa fa-stethoscope faa-bounce animated-hover fa-2x"></i> Servicios</a></li>
+					<li><a class="page-scroll " href="#appointment"><i class="fa fa-calendar-check-o faa-bounce animated-hover fa-2x"></i> Citas </a></li>
+					<li><a class="page-scroll " href="#contact"><i class="fa fa-phone-square faa-bounce animated-hover fa-2x"></i> Contacto</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Sección de introducción -->
+	<section id="intro" class="intro-section">
+		<div class="container">
+			<div class="row carousel-holder">
+				<div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+						</ol>			
+						<div class="carousel-inner">
+							<div class="item active"><img class="slide-image" src="images/carrusel1.jpg" alt=""></div>
+							<div class="item"><img class="slide-image" src="images/carrusel2.jpg" alt=""></div>
+							<div class="item"><img class="slide-image" src="images/carrusel3.jpg" alt=""></div>
+						</div>
+						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span> 
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<h2 class="text-info">Centro médico moyuta</h2>
+					<h4 class="text-primary"><i>"Su salud en buenas manos"</i></h4>
+					<a href="https://www.facebook.com/Centro-M%C3%A9dico-Moyuta-867670693308263/?fref=ts" data-toggle="tooltip"  
+					data-placement="bottom" title="Pagina facebook" target="_blank" class="btn btn-facebook faa-vertical animated-hover">
+					<i class="fa fa-facebook-official text-info fa-4x"></i>
+					</a>
+					<a href="https://www.youtube.com/watch?v=2sLP7Xo2VOs" data-toggle="tooltip" data-placement="bottom" 
+					title="Canal de youtube" target="_blank" class="btn btn-facebook faa-horizontal animated-hover">
+					<i class="fa fa-youtube-square text-danger fa-4x"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección quienes somos -->
+	<section id="about" class="about-section" >		
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h2 class="text-info">¿Quienes somos?</h2></div>
+					<div class="panel-body">
+						<div class="row text-center">
+							<div class="col-lg-6">
+								<h4 class="text-info"><b>Historia</b></h4>
+								<p class="lead text-justify" >El centro médico surge en el año 1995 a partir de la necesidad de la población capitalina para utilizar un servicio de calidad 
+								con profesionales altamente capacitados en el ambito de la médicina general como especializada, posteriormente en el año 2015
+								es trasladado a moyuta, Jutiapa con el fin de poder brindar tambien este servicio a tan prestigioso departamento. Nuestras instalaciones cuentan
+								con servicios especializados en examenes de ultrasonido, electrocardiograma, enfermedades del adulto mayor, pediatria y recientemente clínica de visión.
+								</p>
+							</div>
+							<div class="col-lg-6">
+								<img class="img-responsive center-block img-rounded" src="images/fachada.jpg" alt="">
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección de servicios -->
+	<section id="services" class="services-section">
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 class="text-info text-center">Nuestros servicios</h2>
+				</div>	
+				<div class="panel-body">
+					<div class="row "  style="padding:20px">	
+						<table id="example" class="table table-striped table-hover table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+							<thead>
+								<tr>
+									<th>No.</th>
+									<th>Nombre de servicio</th>
+									<th>Categoría</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="service in servicesList">
+									<td>{{service._id}}</td>
+									<td>{{service.nombre}}</td>
+									<td>{{service.categoria}}</td>
+								</tr>
+							</tbody>
+						</table>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Sección de citas -->
+	<section id="appointment" class="appointments-section">
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h2 class="text-info text-center" >Agendar cita</h2></div>
+				<div class="panel-body" style="padding:20px">				
+						<form name="frm" novalidate>
+							<div class="row">
+								<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-class="{ 'has-error' : frm.nombre.$invalid && !frm.nombre.$pristine }">
+									<label class="control-label" for="inputEmail">Nombre</label>
+									<input type="text" name="nombre" class="form-control" ng-model="cita.nombre" placeholder="Nombre" required>
+									<p ng-show="frm.nombre.$invalid && !frm.nombre.$pristine" class="help-block">Su nombre es requerido</p>
+								</div>
+								<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-class="{ 'has-error' : frm.edad.$invalid && !frm.edad.$pristine }">
+									<label class="control-label" for="inputEmail">Edad</label>
+									<input type="number" name="edad" class="form-control" ng-model="cita.edad" ng-max="120" >
+									<p ng-show="frm.edad.$error.max" class="help-block">Edad debe ser menor a 120 años</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-class="{ 'has-error' : frm.malestar.$invalid && !frm.malestar.$pristine }">
+									<label class="control-label" for="inputPassword">Malestar</label>
+									<textarea rows="5" name="malestar" class="form-control" ng-minlength="10" ng-maxlength="100" ng-model="cita.malestar" ></textarea>
+										<p ng-show="frm.malestar.$error.minlength" class="help-block">Descripción del malestar muy corta debe ser mayor a 10 letras</p>
+										<p ng-show="frm.malestar.$error.maxlength" class="help-block">Descripción de malestar muy larga debe ser menor a 100 letras</p>
+								</div>
+								<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-class="{ 'has-error' : frm.fecha.$invalid && !frm.fecha.$pristine }">
+									<label class="control-label" for="inputEmail">Fecha de cita</label>
+									<div class="input-group date form_datetime">
+										<input class="form-control" name="fecha" type="text" value="" ng-model="cita.fecha" required>
+										<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+										<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+									</div>
+									<p ng-show="frm.fecha.$invalid && !frm.fecha.$pristine" class="help-block">Fecha de cita es requerida</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-class="{ 'has-error' : frm.email.$invalid && !frm.email.$pristine }">
+									<label class="control-label" >Email</label>
+									<input type="email" name="email" class="form-control" ng-model="cita.email" required>
+									<p ng-show="frm.email.$invalid && !frm.email.$pristine" class="help-block">Ingresar un email válido</p>
+								</div>
+							</div>
+							<div class="row text-center">
+								<div class="form-group"><!-- ng-disabled="frm.$invalid" -->
+									<button type="button" class="btn btn-primary"  ng-click="addAppointment()" >Agendar ahora</button>
+								</div>
+							</div>
+						</form>
+				</div>
+			</div>
+		</div>
+	</section>
+		
+	<!-- Sección de contacto -->
+	<section id="contact" class="contact-section ">
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h2 class="text-info" >Contacto</h2></div>
+				<div class="panel-body">
+					<div class="row text-center">					
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<h4 class="text-info"><strong>Contactanos</strong></h4>
+									<p>Barrio el pacifico, a pocos metros de terminal de buses<br>Moyuta, Jutiapa Ciudad de Guatemala</p>
+									<ul class="list-unstyled">
+										<li><i class="fa fa-phone fa-fw"></i> (502) 5982 3580</li>
+										<li><i class="fa fa-envelope-o fa-fw"></i>	<a href="mailto:centromedicomoyuta@gmail">centromedicomoyuta@gmail.com</a></li>
+									</ul>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="400" src="https://maps.google.com/maps?hl=en&q=moyuta guatemala&ie=UTF8&t=roadmap&z=11&iwloc=B&output=embed"><div><small><a href="http://embedgooglemaps.com">embedgooglemaps.com</a></small></div><div><small><a href="http://www.premiumlinkgenerator.com/">free link generators on premiumlinkgenerator.com</a></small></div></iframe>
+								</div>
+							</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<p class="text-info">Copyright &copy; Centro médico Moyuta 2015</p>
+	</section>
+		
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/scrolling-nav.js"></script>
+	<script src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script src="js/locals/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"> </script>
+	<script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.0.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.0.0/js/responsive.bootstrap.min.js"></script>
+	
+	<script src="angularLibs/modules.js"></script>
+	<script src="angularLibs/controllers.js"></script>
+	<script src="angularLibs/services.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$('[data-toggle="tooltip"]').tooltip();   
+			$('[data-toggle="popover"]').popover();
+			$(function () {
+			
+						 
+				$('.form_datetime').datetimepicker({
+				language:  'es',
+				weekStart: 1,
+				todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				forceParse: 0,
+				showMeridian: 1
+				});
+		
+            });
+		});
+	</script>
+</body>
+</html>
+
+
