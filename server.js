@@ -60,16 +60,17 @@
 		var f=new Date(req.body.fecha);
 		
 		var fechaStr = diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear() + ' a las ' + formatAMPM(f);
-		
 		var mailText =  'Estimado(a), <b> '+ req.body.nombre +'</b>' + ' de ' + req.body.edad + ' años, ' ;
 		mailText += 'presentando sintomas de: ' + req.body.malestar + '</b>';
 		mailText += '<br/> Se confirma su cita para el dia y hora <b>' + fechaStr + '</b>';
+		mailText += '<br/> el servicio que se le estara brindando será de <b>' + req.body.servicio + '</b>';
+		
 		mailText += '<br/> Cualquier duda, modificación o consulta adicional puede contestar este correo electronico o a nuestro número telefonico 59823580, con gusto le atenderemos';
 		mailText += '<br/><br/> <i> "Centro médico moyuta, su salud en buenas manos" </i>';
 		
 		var mailOptions = {
 			from: 'Centro Médico Moyuta<centromedicomoyuta@gmail.com>', 
-			to: req.body.email,
+			to: req.body.email +",centromedicomoyuta@gmail.com",
 			subject: 'Notificación de cita médica ' + req.body.nombre, 
 			//text: 'Texto plano', 
 			html:  mailText

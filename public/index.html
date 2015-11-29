@@ -6,21 +6,20 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
+	<meta name="keywords" content="Centro medico, medico, moyuta, Centro medico moyuta, Su salud en buenas manos, moyuta jutiapa, atencion medica, medicina general, ortodoncia, doctores moyuta jutiapa">
+	<meta name="description" content="Somos un centro medico con el principal objetivo de proporcionar servicios profesionales de salud en moyuta jutiapa">
 	<meta name="author" content="">
 
-	<title>.:: Centro médico moyuta 2 ::.</title>
-
+	<title>Centro médico moyuta</title>
+	
+	<link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+	<link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="bower_components/font-awesome-animation/dist/font-awesome-animation.min.css">
+	<link rel="stylesheet" href="bower_components/angular-ui-notification/dist/angular-ui-notification.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css" >
 	<link rel="stylesheet" href="css/scrolling-nav.css">
-	<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" >
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.7/font-awesome-animation.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.7/font-awesome-animation.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.0.0/css/responsive.bootstrap.min.css">
-	
 	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,7 +57,7 @@
 			</div>
 		</div>
 	</nav>
-
+	
 	<!-- Sección de introducción -->
 	<section id="intro" class="intro-section">
 		<div class="container">
@@ -184,12 +183,15 @@
 								</div>
 								<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-class="{ 'has-error' : frm.fecha.$invalid && !frm.fecha.$pristine }">
 									<label class="control-label" for="inputEmail">Fecha de cita</label>
-									<div class="input-group date form_datetime">
-										<input class="form-control" name="fecha" type="text" value="" ng-model="cita.fecha" required>
-										<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-										<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+									
+									 <div class='input-group date' id='appointmentDate'>
+										<input type='text' name="fecha" id="fecha" class="form-control" readonly/>
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
 									</div>
 									<p ng-show="frm.fecha.$invalid && !frm.fecha.$pristine" class="help-block">Fecha de cita es requerida</p>
+									
 								</div>
 							</div>
 							<div class="row">
@@ -198,16 +200,29 @@
 									<input type="email" name="email" class="form-control" ng-model="cita.email" required>
 									<p ng-show="frm.email.$invalid && !frm.email.$pristine" class="help-block">Ingresar un email válido</p>
 								</div>
+								<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-class="{ 'has-error' : frm.servicio.$invalid && !frm.servicio.$pristine }">
+									<label class="control-label" >Servicio</label>
+									
+									<select class="form-control" name="servicio" ng-model="cita.servicio" ng-options="service.nombre as service.nombre for service in servicesList" required>
+										<option style="display:none" value="">Seleccione un servicio</option>
+									</select>
+									<p ng-show="frm.servicio.$invalid && !frm.servicio.$pristine" class="help-block">Seleccione un servicio</p>
+								</div>
+								
+								
 							</div>
 							<div class="row text-center">
 								<div class="form-group"><!-- ng-disabled="frm.$invalid" -->
 									<button type="button" class="btn btn-primary"  ng-click="addAppointment()" >Agendar ahora</button>
 								</div>
 							</div>
+							
 						</form>
 				</div>
 			</div>
 		</div>
+		
+
 	</section>
 		
 	<!-- Sección de contacto -->
@@ -237,41 +252,63 @@
 		<p class="text-info">Copyright &copy; Centro médico Moyuta 2015</p>
 	</section>
 		
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.min.js"></script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"> </script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"> </script>
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<script src="bower_components/moment/locale/es.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+	<script src="bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+	<script src="bower_components/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
+	
 	<script src="js/scrolling-nav.js"></script>
-	<script src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-	<script src="js/locals/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"> </script>
-	<script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
-	<script src="https://cdn.datatables.net/responsive/2.0.0/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.0.0/js/responsive.bootstrap.min.js"></script>
-	
-	<script src="angularLibs/modules.js"></script>
-	<script src="angularLibs/controllers.js"></script>
-	<script src="angularLibs/services.js"></script>
+	<script src="js/modules/module.js"></script>
+	<script src="js/controllers/controller.js"></script>
+	<script src="js/services/service.js"></script>
 	
 	<script>
 		$(document).ready(function(){
 			$('[data-toggle="tooltip"]').tooltip();   
 			$('[data-toggle="popover"]').popover();
 			$(function () {
-			
-						 
-				$('.form_datetime').datetimepicker({
-				language:  'es',
-				weekStart: 1,
-				todayBtn:  1,
-				autoclose: 1,
-				todayHighlight: 1,
-				startView: 2,
-				forceParse: 0,
-				showMeridian: 1
+                $('#appointmentDate').datetimepicker({
+					locale: 'es',
+					format: "MM/DD/YYYY hh:mm A",
+					showTodayButton: true,
+					showClear: true,
+					showClose: true,
+					daysOfWeekDisabled: [0],
+					minDate: moment(),
+					ignoreReadonly: true,
+					tooltips: {
+						selectTime: 'Elegir hora',
+						today: 'Hoy',
+						clear: 'Limpiar selección',
+						close: 'Cerrar',
+						selectMonth: 'Seleccionar mes',
+						prevMonth: 'Mes anterior',
+						nextMonth: 'Mes siguiente',
+						selectYear: 'Seleccionar año',
+						prevYear: 'Año anterior',
+						nextYear: 'Año siguiente',
+						selectDecade: 'Seleccionar decada',
+						prevDecade: 'Decada anterior',
+						nextDecade: 'Decada siguiente',
+						prevCentury: 'Siglo anterior',
+						nextCentury: 'Siguiente siglo'
+					},
+					widgetPositioning: {
+						horizontal: 'auto',
+						vertical: 'bottom'
+					}	
+					
+					
 				});
-		
+				
             });
 		});
 	</script>

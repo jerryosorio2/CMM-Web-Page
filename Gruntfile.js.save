@@ -1,0 +1,22 @@
+require('load-grunt-tasks')(grunt);
+
+module.exports = function(grunt){
+	grunt.registerTask('speak',function(){
+		console.log("im speakin");
+	});
+
+grunt.initConfig({
+watch: {
+  scripts: {
+    files: ['**/*.js'],
+    tasks: ['speak'],
+    options: {
+      spawn: false,
+    },
+  },
+},
+});
+
+grunt.loadNpmTasks('grunt-contrib-watch');
+
+};
